@@ -1,3 +1,38 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+	<header class="text-center p-3 m-3 bg-dark text-white">
+		<h1 class="display-4">TafgeetJS</h1>
+		<p>Convert currency digits into written Arabic words</p>
+	</header>
+	<section class="text-center p-3 m-3 bg-light text-gray-dark">
+		<h2>
+			{{amount | currency:'SDG':true:'1.2-2'}}
+		</h2>
+		<h3 style="direction: rtl;" class="mb-5 text-secondary">
+			{{title}}
+		</h3>
+		<div class="form-group">
+			<input style="width: 50%; margin: 0 auto;" class="text-center form-control form-control-lg" (click)='parse()' (keyup)='parse()'
+				[(ngModel)]='amount' amount type="number" step="0.01" />
+		</div>
+	</section>
+
+	<section class="p-3 pb-5 m-3 bg-light text-gray-dark">
+		<h4 class="text-center mb-3">How to use TafgeetJS with Angular 4</h4>
+		<p>First install the npm module using
+			<code>
+    $npm install  tafgeetjs --save
+    </code> Then it is a matter of importing tafgeetjs into your component like so:</p>
+
+		<code>
+    import * as Tafgeet from 'tafgeetjs';
+    </code><br><br>
+		<code>
+    let amount = 1000.20;  
+    </code><br>
+		<code>
+    let amountInText = new Tafgeet(amount, 'USD').parse();</code><br>
+
+
+	</section>
+
+</div>
