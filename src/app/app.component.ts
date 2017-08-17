@@ -16,7 +16,7 @@ export class AppComponent {
   }
 
   parse() {
-    this.title = new Tafgeet(this.amount).parse();
+    this.title = new Tafgeet(this.amount, 'SDG').parse();
   }
 
 }
